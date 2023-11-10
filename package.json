@@ -1,0 +1,32 @@
+{
+  "name": "tdd-dojo-node",
+  "version": "1.0.0",
+  "description": "Boilerplate project for running a TDD Dojo in JavaScript using Node.JS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DieAntonie/tdd-dojo-node.git"
+  },
+  "keywords": [
+    "tdd",
+    "node",
+    "javascript",
+    "dojo",
+    "boilerplate",
+    "exercise",
+    "practice",
+    "training",
+    "learning",
+    "beginner"
+  ],
+  "author": "Chris Antonie Pieterse",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/DieAntonie/tdd-dojo-node/issues"
+  },
+  "homepage": "https://github.com/DieAntonie/tdd-dojo-node#readme"
+}
