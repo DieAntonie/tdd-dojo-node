@@ -5,7 +5,7 @@ import { MockExtendedRequestableService, MockExtendedSOP, MockRequestA, MockRequ
 
 describe("Requestable Correctional Service", async () => {
 
-    it("must be able to detremine whether the Correctional Service can be provisioned for a request.", () => {
+    it("must indicate whether the Correctional Service can be provisioned for a request.", () => {
         // given
         const requestableServiceRequest = new MockRequestA();
         const nonRequestableServiceRequest = new MockRequestB();
@@ -85,5 +85,19 @@ describe("Standard Operating Procedures", async () => {
         // then
         assert.deepEqual(provisionedServiceA, expectedServiceA);
         assert.deepEqual(provisionedServiceB, expectedServiceB);
+    });
+
+    it("must indicate whether a Correctional Service can be provisioned for a request.", () => {
+        // given
+        const requestableA = new MockExtendedRequestableService(MockRequestA, MockServiceA);
+        const provisionableServiceRequest = new MockRequestA();
+        const nonProvisionableServiceRequest = new MockRequestB();
+
+        // when
+        const extendedSOP = new MockExtendedSOP(requestableA);
+
+        // then
+        assert.ok(extendedSOP.canProvisionFor(provisionableServiceRequest));
+        assert.strictEqual(extendedSOP.canProvisionFor(nonProvisionableServiceRequest), false);
     });
 });

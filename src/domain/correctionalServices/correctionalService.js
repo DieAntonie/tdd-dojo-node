@@ -88,4 +88,13 @@ export class StandardOperatingProcedures {
         const requestedService = this._requestableCorrectionalServices.find(requestableService => requestableService.canBeProvisionedFor(request));
         return requestedService.provision(request);
     };
+
+    /**
+     * Check if a Correctional Service can be provisoned for the provided request.
+     * @param {CorrectionalServiceRequest} request Request to validate for provisionablity
+     * @returns {boolean}
+     */
+    canProvisionFor(request) {
+        return this._requestableCorrectionalServices.some(requestableService => requestableService.canBeProvisionedFor(request));
+    }
 };
