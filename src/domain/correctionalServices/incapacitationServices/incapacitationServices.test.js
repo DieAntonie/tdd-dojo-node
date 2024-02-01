@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { StandardOperatingProcedures } from "../correctionalService.js";
-import { IncapacitationServices, IncarcerationRequest, IncarcerationService } from "./incapacitationServices.js";
+import {
+    ExecutionRequest,
+    ExecutionService,
+    IncapacitationServices,
+    IncarcerationRequest,
+    IncarcerationService
+} from "./incapacitationServices.js";
 
 describe("Incapacitation Services", async () => {
 
@@ -22,5 +28,16 @@ describe("Incapacitation Services", async () => {
 
         // then
         assert.ok(incarcerationService instanceof IncarcerationService)
+    });
+
+    it("must provision execution servises.", () => {
+        // given
+        const incapacitationServices = new IncapacitationServices();
+
+        // when
+        let executionService = incapacitationServices.provisionCorrectionalService(new ExecutionRequest())
+
+        // then
+        assert.ok(executionService instanceof ExecutionService)
     });
 });
