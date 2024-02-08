@@ -10,6 +10,7 @@
 - [Rehabilitation Program](#rehabilitationprogram)
 
 
+```mermaid
 ---
 title: Punishment Management System
 ---
@@ -91,7 +92,7 @@ classDiagram
     -enrollParticipants()
     -trackProgress()
   }
-
+````
 
 ## Inmate
 
