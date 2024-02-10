@@ -1,20 +1,35 @@
 # Domain Classes
 
-- [Inmate](#inmate)
-- [Correctional Officer](#correctionalofficer)
-- [Disciplinary Committee](#disciplinarycommittee)
-- [Rehabilitation Program Coordinator](#rehabilitationprogramcoordinator)
-- [Incident Report](#incidentreport)
-- [Punishment](#punishment)
-- [Appeal](#appeal)
-- [Rehabilitation Program](#rehabilitationprogram)
-
-
-```mermaid
+``` mermaid
 ---
 title: Punishment Management System
 ---
 classDiagram
+IncidentReport --> DisciplinaryCommittee
+Inmate <-- DisciplinaryCommittee
+Appeal *-- Inmate
+Appeal --> Punishment
+Appeal <-- DisciplinaryCommittee
+Inmate *-- Punishment
+Inmate --o IncidentReport
+Inmate <-- CorrectionalOfficer
+Inmate --o RehabilitationProgram
+Inmate <-- RehabilitationProgramCoordinator
+IncidentReport o-- CorrectionalOfficer
+IncidentReport o--> RehabilitationProgramCoordinator
+DisciplinaryCommittee --> RehabilitationProgramCoordinator
+RehabilitationProgram *-- RehabilitationProgramCoordinator
+
+  direction LR
+  class Appeal {
+    -id : int
+    -inmate_id : int
+    -appeal_date : datetime
+    -appeal_reason : string
+    -status : enum
+    -fileAppeal()
+    -updateStatus()
+  }
   class Inmate {
     -id : int
     -name : string
@@ -28,6 +43,27 @@ classDiagram
     -getBehavioralHistory()
     -assignPunishment()
   }
+  class Punishment {
+    -id : int
+    -type : enum
+    -severity : enum
+    -duration : int
+    -conditions : array
+    -status : enum
+    -assignPunishment()
+    -updateStatus()
+  }
+  class IncidentReport {
+    -id : int
+    -date : datetime
+    -location : coords
+    -description : string
+    -evidence : array
+    -inmates_involved : array
+    -staff_involved : array
+    -addEvidence()
+    -notifyAuthorities()
+  }
   class CorrectionalOfficer {
     -id : int
     -name : string
@@ -36,6 +72,15 @@ classDiagram
     -fileIncidentReport()
     -conductCheckIn()
     -reviewIncidentReport()
+  }
+  class RehabilitationProgram {
+    -id : int
+    -name : string
+    -description : string
+    -duration : int
+    -participants : array
+    -enrollParticipants()
+    -trackProgress()
   }
   class DisciplinaryCommittee {
     -id : int
@@ -53,153 +98,73 @@ classDiagram
     -monitorParticipation()
     -trackProgramEffectiveness()
   }
-  class IncidentReport {
-    -id : int
-    -date : datetime
-    -location : coords
-    -description : string
-    -evidence : array
-    -inmates_involved : array
-    -staff_involved : array
-    -addEvidence()
-    -notifyAuthorities()
-  }
-  class Punishment {
-    -id : int
-    -type : enum
-    -severity : enum
-    -duration : int
-    -conditions : array
-    -status : enum
-    -assignPunishment()
-    -updateStatus()
-  }
-  class Appeal {
-    -id : int
-    -inmate_id : int
-    -appeal_date : datetime
-    -appeal_reason : string
-    -status : enum
-    -fileAppeal()
-    -updateStatus()
-  }
-  class RehabilitationProgram {
-    -id : int
-    -name : string
-    -description : string
-    -duration : int
-    -participants : array
-    -enrollParticipants()
-    -trackProgress()
-  }
-````
 
-## Inmate
+```
 
-### Attributes
-- ID
-- name
-- age
-- gender
-- photograph
-- medical history
-- behavioral history
-- disciplinary records
+## [Inmate](domain-classes/inmate.md)
 
-### Methods
-`updateProfile()` - Updates the inmate's profile information.<br/>
-`getBehavioralHistory()` - Retrieves the inmate's behavioral history.<br/>
-`assignPunishment()` - Assigns a punishment to the inmate.
+**Attributes**: id, name, age, gender, photograph, medical history, behavioral history, disciplinary records
 
-## CorrectionalOfficer
+**Methods**:
+- `updateProfile()`
+- `getBehavioralHistory()`
+- `assignPunishment()`
 
-### Attributes
-- ID
-- name
-- rank
-- department
+## [Correctional Officer](domain-classes/correctional-officer.md)
 
-### Methods
-`fileIncidentReport()` - Files an incident report for a rule violation or disruptive incident.<br/>
-`conductCheckIn()` - Conducts a check-in with an inmate under disciplinary supervision.<br/>
-`reviewIncidentReport()` - Reviews incident reports submitted by other officers.
+**Attributes**: id, name, rank, department
 
-## DisciplinaryCommittee
+**Methods**
+- `fileIncidentReport()`
+- `conductCheckIn()`
+- `reviewIncidentReport()`
 
-### Attributes
-- ID
-- members
-- meetingDate
+## [Disciplinary Committee](domain-classes/disciplinary-committee.md)
 
-### Methods
-`reviewAppeal()` - Reviews an inmate's appeal of a disciplinary decision.<br/>
-`assessProgress()` - Assesses an inmate's progress in compliance with assigned punishments.<br/>
-`makeDecision()` - Makes a decision regarding the outcome of an appeal or progress assessment.
+**Attributes**: id, members, meeting date
 
-## RehabilitationProgramCoordinator
+**Methods**
+- `reviewAppeal()`
+- `assessProgress()`
+- `makeDecision()`
 
-### Attributes
-- ID
-- name
-- department
+## [Rehabilitation Program Coordinator](domain-classes/rehabilitation-program-coordinator.md)
 
-### Methods
-`identifyEligibleInmates()` - Identifies eligible inmates for participation in rehabilitation programs.<br/>
-`monitorParticipation()` - Monitors inmate participation and progress in rehabilitation programs.<br/>
-`trackProgramEffectiveness()` - Tracks the effectiveness of rehabilitation programs in reducing recidivism rates.
+**Attributes**: id, name, department
 
-## IncidentReport
+**Methods**
+- `identifyEligibleInmates()`
+- `monitorParticipation()`
+- `trackProgramEffectiveness()`
 
-### Attributes
-- ID
-- date
-- time
-- location
-- description
-- evidence
-- inmatesInvolved
-- staffInvolved
+## [Incident Report](domain-classes/incident-report.md)
 
-### Methods
-`addEvidence()` - Adds evidence to the incident report.<br/>
-`notifyAuthorities()` - Notifies supervisory staff or the disciplinary committee about the incident.
+**Attributes**: id, date, time, location, description, evidence, inmates involved, staff involved
 
-## Punishment
+**Methods**
+- `addEvidence()`
+- `notifyAuthorities()`
 
-### Attributes
-- ID
-- type
-- severity
-- duration
-- conditions
-- status (e.g., pending, active, completed)
+## [Punishment](domain-classes/punishment.md)
 
-### Methods
-`assignPunishment()` - Assigns a punishment to an inmate for a rule violation.<br/>
-`updateStatus()` - Updates the status of the punishment (e.g., completed, revoked).
+**Attributes**: id, type, severity, duration, conditions, status (*e.g., pending, active, completed*)
 
-## Appeal
+**Methods**
+- `assignPunishment()`
+- `updateStatus()`
 
-### Attributes
-- ID
-- inmateID
-- appealDate
-- appealReason
-- status (e.g., pending, reviewed, upheld, overturned)
+## [Appeal](domain-classes/appeal.md)
 
-### Methods
-`fileAppeal()` - Files an appeal against a disciplinary decision.<br/>
-`updateStatus()` - Updates the status of the appeal based on the outcome of the review.
+**Attributes**: id, inmate id, appeal date, appeal reason, status (*e.g., pending, reviewed, upheld, overturned*)
 
-## RehabilitationProgram
+**Methods**
+- `fileAppeal()`
+- `updateStatus()`
 
-### Attributes
-- ID
-- name
-- description
-- duration
-- participants
+## [Rehabilitation Program](domain-classes/rehabilitation-program.md)
 
-### Methods
-`enrollParticipants()` - Enrolls eligible inmates in the rehabilitation program.<br/>
-`trackProgress()` - Tracks participant progress and completion of program milestones.
+**Attributes**: id, name, description, duration, participants
+
+**Methods**
+- `enrollParticipants()`
+- `trackProgress()`
