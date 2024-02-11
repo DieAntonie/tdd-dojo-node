@@ -6,7 +6,31 @@ export class CorrectionalService { };
 /**
  * Correctional Service request.
  */
-export class CorrectionalServiceRequest { };
+export class CorrectionalServiceRequest {
+
+    /**
+     * Correctional Services targeted for provisioning.
+     * @type {CorrectionalService.constructor[]}
+     */
+    _serviceTargets = [];
+
+    /**
+     * 
+     */
+    constructor() {
+        if (this._serviceTargets) {
+            
+        }
+        throw new TypeError("Requestable Correctional Service must only be provisioned with established request.");
+    }
+
+    /**
+     * Check if Correctional Service is targeted. 
+     * @param {CorrectionalService.constructor} service Correctional service to check for targeting.
+     * @returns {boolean}
+     */
+    for = service => this._serviceTargets.includes(service)
+};
 
 /**
  * Requestable Correctional Service.
@@ -39,7 +63,7 @@ export class RequestableCorrectionalService {
      * @param {CorrectionalServiceRequest} request Request to validate for provisionablity.
      * @returns {boolean}
      */
-    canBeProvisionedFor(request) {
+    serivceCanBeProvisionedFor(request) {
         return request instanceof this._request;
     };
 
@@ -49,7 +73,7 @@ export class RequestableCorrectionalService {
      * @returns {CorrectionalService} requested Correctional Service.
      */
     provision(request) {
-        if (this.canBeProvisionedFor(request)) {
+        if (this.serivceCanBeProvisionedFor(request)) {
             return new this._service(request);
         }
         throw new TypeError("Requestable Correctional Service must only be provisioned with established request.");
@@ -61,32 +85,32 @@ export class RequestableCorrectionalService {
  */
 export class StandardOperatingProcedures {
     /**
-     * Correctional Services that can be requested.
-     * @type {RequestableCorrectionalService[]}
+     * Correctional Services that can be provisioned.
+     * @type {CorrectionalService.constructor[]}
      */
-    _requestableCorrectionalServices = [];
+    _correctionalServices = [];
 
     /**
-     * Extend Correctional Services Standard Operating Procedures with additional requestable service.
-     * @param  {...RequestableCorrectionalService} additionalRequestableServices additional requestable services that extend the Correctional Services Standard Operating Procedures.
+     * Extend Correctional Services Standard Operating Procedures with additional provisionable service.
+     * @param  {...CorrectionalService} additionalServices additional provisionable services that extend the Correctional Services Standard Operating Procedures.
      * @returns { StandardOperatingProcedures } extended Standard Operating Procedures for providing Correctional Services.
      * @throws { TypeError } Standard Operating Procedures must be extended to provision ANY Correctional Services.
      */
-    constructor(...additionalRequestableServices) {
+    constructor(...additionalServices) {
         if (this.constructor === StandardOperatingProcedures) {
             throw new TypeError("Standard Operating Procedures must be extended to provision ANY Correctional Services.");
         }
-        this._requestableCorrectionalServices = [...this._requestableCorrectionalServices, ...additionalRequestableServices.flat()];
+        this._correctionalServices = [...this._correctionalServices, ...additionalServices.flat()];
     };
 
     /**
      * Provision the requested Correctional Service.
-     * @param {CorrectionalServiceRequest} request Request to provision a Correctional Service.
+     * @param {CorrectionalServiceRequest} requested Request to provision a Correctional Service.
      * @returns {CorrectionalService} Requested Correctional Service.
      */
-    provisionCorrectionalService(request) {
-        const requestedService = this._requestableCorrectionalServices.find(requestableService => requestableService.canBeProvisionedFor(request));
-        return requestedService.provision(request);
+    provision(requested) {
+        const requestedService = this._correctionalServices.find(requested.for);
+        return requestedService(requested);
     };
 
     /**
@@ -95,6 +119,6 @@ export class StandardOperatingProcedures {
      * @returns {boolean}
      */
     canProvisionFor(request) {
-        return this._requestableCorrectionalServices.some(requestableService => requestableService.canBeProvisionedFor(request));
+        return this._correctionalServices.some(requestableService => requestableService.serivceCanBeProvisionedFor(request));
     }
 };

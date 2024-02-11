@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { CorrectionalService, CorrectionalServiceRequest, RequestableCorrectionalService, StandardOperatingProcedures } from "./correctionalService.js";
+import { CorrectionalService, CorrectionalServiceRequest, RequestableCorrectionalService as CorrectionalServiceRequestHandler, StandardOperatingProcedures } from "./correctionalService.js";
 import { MockExtendedRequestableService, MockExtendedSOP, MockRequestA, MockRequestB, MockServiceA, MockServiceB } from "./correctionalServiceMocks.js";
 
 describe("Requestable Correctional Service", async () => {
@@ -11,17 +11,17 @@ describe("Requestable Correctional Service", async () => {
         const nonRequestableServiceRequest = new MockRequestB();
 
         // when
-        const requestedCorrectionalService = new RequestableCorrectionalService(MockRequestA, CorrectionalService);
+        const requestedCorrectionalService = new CorrectionalServiceRequestHandler(MockRequestA, CorrectionalService);
 
         // then
-        assert.ok(requestedCorrectionalService.canBeProvisionedFor(requestableServiceRequest));
-        assert.strictEqual(requestedCorrectionalService.canBeProvisionedFor(nonRequestableServiceRequest), false);
+        assert.ok(requestedCorrectionalService.serivceCanBeProvisionedFor(requestableServiceRequest));
+        assert.strictEqual(requestedCorrectionalService.serivceCanBeProvisionedFor(nonRequestableServiceRequest), false);
     });
 
     it("must provision the requested Correctional Service with the provided request.", () => {
         // given
         const serviceRequest = new CorrectionalServiceRequest();
-        const requestedCorrectionalService = new RequestableCorrectionalService(CorrectionalServiceRequest, MockServiceA);
+        const requestedCorrectionalService = new CorrectionalServiceRequestHandler(CorrectionalServiceRequest, MockServiceA);
 
         // when
         const requestedService = requestedCorrectionalService.provision(serviceRequest);
@@ -33,7 +33,7 @@ describe("Requestable Correctional Service", async () => {
 
     it("must only be provisioned with established request.", () => {
         // given
-        const requestedCorrectionalService = new RequestableCorrectionalService(MockServiceA, MockServiceA);
+        const requestedCorrectionalService = new CorrectionalServiceRequestHandler(MockServiceA, MockServiceA);
         const nonRequestableServiceRequest = new MockServiceB();
 
         // when
@@ -48,7 +48,7 @@ describe("Standard Operating Procedures", async () => {
 
     it("must be extended to provision ANY Correctional Services.", () => {
         // given
-        const requestedCorrectionalService = new RequestableCorrectionalService(CorrectionalServiceRequest, CorrectionalService);
+        const requestedCorrectionalService = new CorrectionalServiceRequestHandler(CorrectionalServiceRequest, CorrectionalService);
 
         // when
         const unextendedSOP = () => new StandardOperatingProcedures(requestedCorrectionalService);
@@ -59,7 +59,7 @@ describe("Standard Operating Procedures", async () => {
 
     it("must support additional requestable Correctional Services when extended.", () => {
         // given
-        const requestedCorrectionalService = new RequestableCorrectionalService(CorrectionalServiceRequest, CorrectionalService);
+        const requestedCorrectionalService = new CorrectionalServiceRequestHandler(CorrectionalServiceRequest, CorrectionalService);
 
         // when
         const extendedSOP = new MockExtendedSOP(requestedCorrectionalService);

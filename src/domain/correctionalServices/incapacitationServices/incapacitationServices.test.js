@@ -41,3 +41,14 @@ describe("Incapacitation Services", async () => {
         assert.ok(executionService instanceof ExecutionService)
     });
 });
+
+// describe("Incarceration Service", async () => {
+
+//     it("", () => {
+//         // when
+//         const incarcerationService = new IncarcerationService();
+
+//         // then
+//         assert.ok(incapacitationServices instanceof StandardOperatingProcedures)
+//     });
+// });
