@@ -1,9 +1,10 @@
 # Use Cases
 
 ## [Inmate Profile Management](use-cases/inmate-profile-management.md)
+![Inmate Profile Management](use-cases/inmate-profile-management.svg)
 - Use Case 1: Creating a New Inmate Profile
 - Use Case 2: Updating Inmate Information
-- Use Case 3: Accessing Inmate Profile InformationProfile Information
+- Use Case 3: Accessing Inmate Profile Information
 
 ## [Incident Reporting](use-cases/incident-reporting.md)
 - Use Case 1: Reporting a Rule Violation

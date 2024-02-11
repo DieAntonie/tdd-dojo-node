@@ -8,5 +8,5 @@ Boilerplate project for running a TDD Dojo in JavaScript using the Node.JS
 ## Case Study: The Department of Correctional Services (DCS)
 
 - Problem identification as outlined in the [System Vision Document](documentation/system-vision.md)
-- Identified [Use Cases](documentation/use-cases.md)
+- Identified [Use Cases](documentation/use-cases/use-cases.md)
 - Identified [Domain Classes](documentation/domain-classes.md)
