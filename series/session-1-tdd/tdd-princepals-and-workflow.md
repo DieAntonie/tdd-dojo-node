@@ -15,7 +15,7 @@ Test-Driven Development (TDD) is a software development approach that emphasizes
 5. **Repeat the Cycle:**
    - Developers continue this cycle of writing a failing test, writing the minimum code to pass the test, running the tests, and refactoring the code. Each iteration of the cycle adds a small piece of functionality to the software and ensures that it remains working correctly.
 
-### Key Principles of TDD:
+## Key Principles of TDD:
 - **Red-Green-Refactor:** This is the core cycle of TDD, where developers write a failing test (Red), write the minimum code to pass the test (Green), and then refactor the code (Refactor) to improve its quality.
   
 - **Test First:** In TDD, tests are written before the production code. This ensures that the tests drive the design of the software and provide a clear specification for its behavior.

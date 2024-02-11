@@ -5,7 +5,7 @@ Below are unit tests for basic inventory management functionalities using only t
 
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import inventory from '../inventory';
+import inventory from '../inventory.js';
 
 describe('Inventory Management', () => {
   describe('addBookToInventory', () => {

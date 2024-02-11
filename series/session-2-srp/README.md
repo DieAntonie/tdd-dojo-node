@@ -6,7 +6,7 @@
 
 ## Agenda:
 1. **Understanding SRP**:
-   - Brief review of SRP principles and its importance in software design.
+   - Brief review of [SRP principles and its importance in software design](single-responsibility-principle.md).
    - Explanation of the benefits of adhering to SRP.
    
 2. **Analyzing Existing Codebase**:
@@ -18,7 +18,7 @@
    - Instruct participants to analyze the existing codebase and identify areas of responsibility.
    
 4. **Refactoring Code**:
-   - Instruct participants to refactor the code to separate responsibilities into distinct modules or classes.
+   - Instruct participants to [refactor the code](srp-refactored-ims.md) to separate responsibilities into distinct modules or classes.
    - Encourage participants to focus on creating classes with single responsibilities.
    - Provide guidance and assistance as needed.
    
