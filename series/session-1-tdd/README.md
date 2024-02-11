@@ -14,7 +14,7 @@
    - Assistance provided for participants who encounter difficulties.
 
 3. **Writing Test Cases**:
-   - Identify test scenarios for basic inventory management functionalities:
+   - Identify [test scenarios for basic inventory management functionalities](basic-ims-tests.md):
      - Adding a book to the inventory.
      - Listing all books in the inventory.
      - Removing a book from the inventory.
