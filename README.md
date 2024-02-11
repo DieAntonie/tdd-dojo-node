@@ -5,33 +5,33 @@ Boilerplate project for running a TDD Dojo in JavaScript using the Node.JS
 
 - Install Node Version Manager
 
-## Case Study: Evolution of an Inventory Management System
+## Case Study: [Evolution of an Inventory Management System](series/README.md)
 
 ### Overview:
 In this series of Code Dojo sessions, participants will collaboratively work on refining and improving an inventory management system for an online bookstore. Throughout the series, we'll focus on applying key principles of software design, including Test Driven Development (TDD), Single Responsibility Principle (SRP), Open/Closed Principle (OCP), Liskov's Substitution Principle (LSP), Interface Segregation Principle (ISP), and Dependency Inversion Principle (DIP).
 
 ### Session Structure:
-1. **Session 1: Introduction to Test Driven Development (TDD)**
+**Session 1: Introduction to Test Driven Development (TDD)**
    - Participants will begin by implementing a basic inventory management system using TDD principles.
    - Focus on writing tests before writing code and iteratively improving the design based on feedback from tests.
 
-2. **Session 2: Single Responsibility Principle (SRP)**
+**Session 2: Single Responsibility Principle (SRP)**
    - Refactor the existing codebase to adhere to SRP by separating responsibilities for adding, removing, and listing books into distinct modules.
    - Discussion on identifying and defining clear responsibilities for classes and methods.
 
-3. **Session 3: Open/Closed Principle (OCP)**
+**Session 3: Open/Closed Principle (OCP)**
    - Modify the program to make it open for extension but closed for modification, allowing for the addition of new book genres without altering existing code.
    - Explore techniques for designing flexible and extensible software systems.
 
-4. **Session 4: Liskov's Substitution Principle (LSP)**
+**Session 4: Liskov's Substitution Principle (LSP)**
    - Expand the program to handle different types of items (e.g., books, ebooks, audiobooks) while ensuring that each type can be substituted without altering the correctness of the inventory management system.
    - Discussion on designing class hierarchies and interfaces that adhere to LSP.
 
-5. **Session 5: Interface Segregation Principle (ISP)**
+**Session 5: Interface Segregation Principle (ISP)**
    - Refactor interfaces used in the program to be more focused and cohesive, adhering to ISP.
    - Identify opportunities to split large interfaces into smaller, more specialized ones.
 
-6. **Session 6: Dependency Inversion Principle (DIP)**
+**Session 6: Dependency Inversion Principle (DIP)**
    - Implement dependency injection to decouple the inventory management logic from the underlying data storage mechanism.
    - Explore the benefits of designing components with loosely coupled dependencies.
 
