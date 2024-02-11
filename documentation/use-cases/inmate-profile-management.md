@@ -5,6 +5,8 @@
 
 **Description:** A correctional officer needs to create a new profile for an inmate who has been admitted to the correctional facility.
 
+![Create Inmate Profile](inmate-profile-management-creation.svg)
+
 **Steps:**
 1. The correctional officer accesses the Punishment Management System and navigates to the inmate profile management section.
 2. They initiate the process of creating a new profile by entering basic inmate information such as name, age, gender, and identification number.
