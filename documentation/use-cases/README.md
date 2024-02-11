@@ -1,6 +1,6 @@
 # Use Cases
 
-## [Inmate Profile Management](inmate-profile-management.md)
+## [Inmate Profile Management](inmate-profile-management/)
 ![Inmate Profile Management](inmate-profile-management.svg)
 - Use Case 1: Creating a New Inmate Profile
 - Use Case 2: Updating Inmate Information
