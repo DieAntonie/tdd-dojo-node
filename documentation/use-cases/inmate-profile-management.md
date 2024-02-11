@@ -1,11 +1,12 @@
 # Inmate Profile Management
 
 ## Use Case 1: Creating a New Inmate Profile
+
+![Create Inmate Profile](inmate-profile-management-creation.svg)
+
 **Actor:** Correctional Officer
 
 **Description:** A correctional officer needs to create a new profile for an inmate who has been admitted to the correctional facility.
-
-![Create Inmate Profile](inmate-profile-management-creation.svg)
 
 **Steps:**
 1. The correctional officer accesses the Punishment Management System and navigates to the inmate profile management section.
@@ -17,6 +18,9 @@
 **Outcome:** A comprehensive profile is created for the new inmate, providing staff with essential information for managing their custody, care, and disciplinary proceedings within the correctional facility.
 
 ## Use Case 2: Updating Inmate Information
+
+![Create Inmate Profile](inmate-profile-management-update.svg)
+
 **Actor:** Correctional Officer
 
 **Description:** A correctional officer needs to update the profile of an inmate with new information or changes to their circumstances.
@@ -32,6 +36,9 @@
 **Outcome:** The inmate's profile is kept up-to-date with accurate information, allowing staff to make informed decisions and provide appropriate care and supervision based on the inmate's current status.
 
 ## Use Case 3: Accessing Inmate Profile Information
+
+![Create Inmate Profile](inmate-profile-management-read.svg)
+
 **Actor:** Correctional Officer
 
 **Description:** A correctional officer needs to retrieve specific information from an inmate's profile for administrative or operational purposes.
