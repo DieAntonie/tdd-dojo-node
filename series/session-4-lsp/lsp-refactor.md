@@ -1,15 +1,15 @@
 To refactor the basic inventory management functionalities from Session 3 to adhere to the Liskov Substitution Principle (LSP), we need to ensure that subclasses can be substituted for their base classes without altering the correctness of the program. Here's how we can approach the refactoring process:
 
-### Step 1: Identify Substitutability Issues
+## Step 1: Identify Substitutability Issues
 Identify areas in the codebase where subclasses behave inconsistently with their base classes or violate the contract established by their base classes. Look for methods or properties that are specific to subclasses and are not applicable to all items.
 
-### Step 2: Design for Substitutability
+## Step 2: Design for Substitutability
 Design the system to support substitutability by ensuring that subclasses adhere to the interface and behavior established by their base classes. Avoid introducing methods or properties in subclasses that are not applicable to all items or that modify the behavior of inherited methods.
 
-### Step 3: Refactor Class Hierarchy
+## Step 3: Refactor Class Hierarchy
 Refactor the class hierarchy to promote substitutability and consistency across subclasses. Ensure that methods and properties are inherited from the base class only if they are applicable to all items, and provide additional methods or properties in subclasses only if necessary.
 
-### Refactored Code Example:
+## Refactored Code Example:
 
 ```javascript
 // Item.js

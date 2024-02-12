@@ -1,6 +1,6 @@
 Let's revisit the basic inventory management functionalities from Session 3 and identify potential areas where the code might violate the Liskov Substitution Principle (LSP) by behaving inconsistently with the behavior of their base classes.
 
-### Example Code:
+## Example Code:
 
 ```javascript
 // InventoryManager.js
@@ -37,7 +37,7 @@ class CD {
 }
 ```
 
-### Potential Violations of LSP:
+## Potential Violations of LSP:
 
 1. **Inconsistent Behavior in Subclasses:**
    - If subclasses such as `Book` or `CD` behave inconsistently with their superclass `Item`, violating the contract established by `Item`, they may violate LSP. For example, if the `Book` class has additional methods or properties that are not applicable to all items, it may lead to inconsistent behavior when substituting `Book` objects for `Item` objects.
@@ -48,7 +48,7 @@ class CD {
 3. **Violation of Class Invariants:**
    - If subclasses violate the class invariants established by their superclass, they may violate LSP. For example, if the `CD` class allows negative values for the `title` or `artist` properties, it may lead to inconsistent behavior when substituting `CD` objects for `Item` objects.
 
-### Recommendations for Adhering to LSP:
+## Recommendations for Adhering to LSP:
 
 1. **Consistent Behavior Across Subclasses:**
    - Ensure that subclasses behave consistently with their superclass and adhere to the contract established by the superclass. This includes having the same interface, honoring preconditions and postconditions, and maintaining class invariants.

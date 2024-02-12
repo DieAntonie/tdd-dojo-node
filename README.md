@@ -46,3 +46,11 @@ In this series of Code Dojo sessions, participants will collaboratively work on 
 - Participants with varying levels of experience in software development, from beginners to seasoned professionals.
 
 By focusing on a single project and progressively refining it throughout the series, participants will gain a deeper understanding of how software design principles impact the evolution and quality of software systems. The collaborative nature of the Code Dojo sessions will provide opportunities for hands-on learning and knowledge exchange among participants.
+
+## P.S. to the Presenter
+
+As you proceed with the series, remember to encourage active participation and collaboration among participants. Discussing design principles and practices can lead to valuable insights and help reinforce learning.
+
+Additionally, don't hesitate to adapt the content based on the feedback and progress of the participants. Flexibility is key to ensuring that the series remains engaging and relevant to the needs of the group.
+
+Overall, I wish you and your participants a rewarding and enriching experience as you explore the evolution of the inventory management system and delve into various software design principles. If you have any further questions or need assistance in the future, feel free to reach out. Good luck with your series!

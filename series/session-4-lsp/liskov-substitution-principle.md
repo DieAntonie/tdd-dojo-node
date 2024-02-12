@@ -1,6 +1,6 @@
 The Liskov Substitution Principle (LSP) is one of the five SOLID principles of object-oriented design, introduced by Barbara Liskov in 1987. It states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
 
-### Significance of LSP in Software Design:
+## Significance of LSP in Software Design:
 
 1. **Behavioral Subtyping:**
    - LSP extends the concept of subtyping to include not just the inheritance hierarchy but also behavioral compatibility. Subclasses should adhere to the contract established by their superclass, ensuring that they can be used interchangeably.
@@ -20,7 +20,7 @@ The Liskov Substitution Principle (LSP) is one of the five SOLID principles of o
 6. **Enforcement of Design Contracts:**
    - LSP enforces the notion of design contracts between classes and their clients. Subclasses are required to uphold the same contract as their base classes, ensuring that clients can rely on the documented behavior and guarantees provided by the superclass.
 
-### Example:
+## Example:
 Consider a scenario where you have a superclass `Shape` with subclasses `Rectangle` and `Square`. According to LSP, objects of type `Rectangle` should be substitutable for objects of type `Shape` without altering the correctness of the program. Similarly, objects of type `Square`, being a subtype of `Rectangle`, should also be substitutable for objects of type `Shape`.
 
 ```javascript

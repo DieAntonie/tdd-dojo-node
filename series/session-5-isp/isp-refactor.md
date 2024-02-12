@@ -1,15 +1,15 @@
 To refactor the basic inventory management functionalities from Session 4 to adhere to the Interface Segregation Principle (ISP), we need to segregate interfaces into smaller, more cohesive units based on client requirements. Here's how we can approach the refactoring process:
 
-### Step 1: Identify Interface Responsibilities
+## Step 1: Identify Interface Responsibilities
 Identify the responsibilities of the existing interfaces and determine if they can be segregated into smaller, more focused units. Look for methods or properties that are not relevant to all clients and consider creating separate interfaces for them.
 
-### Step 2: Design for Cohesion
+## Step 2: Design for Cohesion
 Design the system to support cohesion by ensuring that interfaces have a single responsibility and are focused on a specific set of methods or properties. Avoid including methods or properties in interfaces that are not relevant to all clients.
 
-### Step 3: Refactor Class Hierarchy
+## Step 3: Refactor Class Hierarchy
 Refactor the class hierarchy to segregate interfaces into smaller units that are more cohesive. Create separate interfaces for different responsibilities and ensure that clients depend only on the interfaces they need.
 
-### Refactored Code Example:
+## Refactored Code Example:
 
 ```javascript
 // AddItemInterface.js
@@ -84,7 +84,7 @@ class CD extends ItemInterface {
 module.exports = CD;
 ```
 
-### Explanation:
+## Explanation:
 
 - We've segregated the `InventoryManager` interface into smaller, more focused units based on client requirements. For example, we have separate interfaces for adding, removing, and listing items (`AddItemInterface`, `RemoveItemInterface`, `ListItemsInterface`).
 - The `Item` interface has been segregated into smaller units based on common properties (`name`, `price`) and specific properties (`author` for books, `artist` for CDs) to adhere to the single responsibility principle.
