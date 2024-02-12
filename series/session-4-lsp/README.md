@@ -1,31 +1,34 @@
-# Code Dojo Session 4: Liskov's Substitution Principle (LSP)
+# Code Dojo Session 4: Liskov Substitution Principle (LSP)
 
 ## Objective:
-- Introduce Liskov's Substitution Principle (LSP) and its implications for object-oriented design.
-- Refactor the program to ensure that derived classes can be substituted for their base classes without altering the correctness of the program.
+- Explore the Liskov Substitution Principle (LSP) and its significance in software design.
+- Refactor the existing codebase to adhere to LSP by ensuring that subclasses can be substituted for their base classes without altering the correctness of the program.
 
 ## Agenda:
-1. **Understanding LSP**:
-   - Brief overview of Liskov's Substitution Principle (LSP) and its importance.
-   - Explanation of the role of LSP in designing class hierarchies.
-   
-2. **Analyzing Class Hierarchies**:
+1. **Introduction to LSP**:
+   - Brief review of the [Liskov Substitution Principle (LSP)](liskov-substitution-principle.md) and its importance in software design.
+   - Explanation of the benefits of adhering to LSP.
+
+2. **Analyzing Existing Codebase**:
    - Group review of the codebase from Session 3.
-   - Discussion on the existing class hierarchies and potential violations of LSP.
-   
-3. **Ensuring Substitutability**:
+   - Discussion on identifying areas where the codebase [violates LSP](lsp-violations.md).
+
+3. **Identifying Substitutability**:
    - Divide participants into pairs.
-   - Instruct participants to refactor the code to ensure that derived classes can be substituted for their base classes without altering behavior.
-   - Encourage participants to focus on maintaining the behavior of the program while making changes.
-   
-4. **Writing Tests**:
-   - Instruct participants to write tests to verify that substitutability has been maintained after refactoring.
-   - Conduct group review of the tests and the modified code.
-   
-5. **Review and Discussion**:
-   - Facilitate a group discussion on the application of Liskov's Substitution Principle (LSP).
+   - Instruct participants to identify subclasses that violate LSP by behaving in a way that is inconsistent with the behavior of their base classes.
+
+4. **Refactoring Code**:
+   - Instruct participants to [refactor the codebase](lsp-refactor.md) to ensure that subclasses can be substituted for their base classes without altering the correctness of the program.
+   - Encourage participants to use techniques such as inheritance, composition, and overriding methods to achieve this goal.
+
+5. **Testing Refactored Code**:
+   - Instruct participants to write tests to verify that the refactored code behaves as expected.
+   - Conduct group review of the tests and the refactored code.
+
+6. **Review and Discussion**:
+   - Facilitate a group discussion on the challenges faced during the refactoring process.
    - Encourage participants to share insights and experiences.
-   - Discuss best practices for designing class hierarchies that adhere to LSP.
+   - Discuss best practices for designing classes that adhere to the Liskov Substitution Principle (LSP).
 
 ## Materials Needed:
 - Codebase from Session 3.
@@ -33,6 +36,6 @@
 - Code editor and compiler/interpreter for participants to write and test code.
 
 ## Key Takeaways:
-- Understanding of Liskov's Substitution Principle (LSP) and its significance in object-oriented design.
-- Practice in refactoring code to ensure substitutability without altering behavior.
-- Experience in designing flexible and maintainable class hierarchies that adhere to LSP.
+- Understanding of the Liskov Substitution Principle (LSP) and its role in software design.
+- Practice in identifying violations of LSP and refactoring code to adhere to the principle.
+- Experience in designing classes that support substitutability and maintain correctness when substituting subclasses for their base classes.
