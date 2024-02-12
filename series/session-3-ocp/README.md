@@ -1,35 +1,34 @@
 # Code Dojo Session 3: Open/Closed Principle (OCP)
 
 ## Objective:
-- Introduce the Open/Closed Principle (OCP) and its role in creating flexible and extensible software systems.
-- Modify the program to allow for the addition of new features without modifying existing code.
+- Explore the Open/Closed Principle (OCP) and its significance in software design.
+- Refactor the existing codebase to adhere to OCP by designing modules and classes that are open for extension but closed for modification.
 
 ## Agenda:
 1. **Introduction to OCP**:
-   - Brief overview of the Open/Closed Principle (OCP) and its benefits.
-   - Explanation of the importance of designing software to be open for extension but closed for modification.
-   
-2. **Analyzing the Program**:
+   - Brief overview of the [Open/Closed Principle (OCP)](open-close-principle.md) and its importance in software design.
+   - Explanation of the benefits of adhering to OCP.
+
+2. **Analyzing Existing Codebase**:
    - Group review of the codebase from Session 2.
-   - Discussion on areas where the codebase can be extended without modification.
-   
-3. **Modifying the Program**:
+   - Discussion on identifying areas where the codebase [violates the OCP](ocp-violations.md).
+
+3. **Identifying Extension Points**:
    - Divide participants into pairs.
-   - Instruct participants to identify areas of the codebase that can be extended to accommodate new features.
-   - Guide participants in implementing extension points within the program.
-   
-4. **Implementing Extension Points**:
-   - Instruct participants to add mechanisms to the program to allow for the addition of new book genres or features.
-   - Encourage participants to follow the principles of abstraction and encapsulation.
-   
-5. **Testing Extension Points**:
-   - Instruct participants to write tests to ensure that the program remains functional after adding new features.
-   - Conduct group review of the tests and the modified code.
-   
+   - Instruct participants to identify areas of the codebase that are likely to change or be extended in the future.
+
+4. **Designing for Extension**:
+   - Instruct participants to [refactor the codebase](ocp-refactor.md) to design modules and classes that are open for extension but closed for modification.
+   - Encourage participants to use techniques such as abstraction, inheritance, and composition to achieve this goal.
+
+5. **Testing Refactored Code**:
+   - Instruct participants to write tests to verify that the refactored code behaves as expected.
+   - Conduct group review of the tests and the refactored code.
+
 6. **Review and Discussion**:
-   - Facilitate a group discussion on the application of the Open/Closed Principle (OCP).
+   - Facilitate a group discussion on the challenges faced during the refactoring process.
    - Encourage participants to share insights and experiences.
-   - Discuss best practices for designing flexible and extensible software architectures.
+   - Discuss best practices for designing modules and classes that adhere to the Open/Closed Principle (OCP).
 
 ## Materials Needed:
 - Codebase from Session 2.
@@ -37,6 +36,6 @@
 - Code editor and compiler/interpreter for participants to write and test code.
 
 ## Key Takeaways:
-- Understanding of the Open/Closed Principle (OCP) and its significance in software design.
-- Practice in identifying areas of a codebase that can be extended without modification.
-- Experience in modifying software to accommodate new features without altering existing code.
+- Understanding of the Open/Closed Principle (OCP) and its role in software design.
+- Practice in identifying areas of code that violate OCP and refactoring them to adhere to the principle.
+- Experience in designing modules and classes that are open for extension but closed for modification.
