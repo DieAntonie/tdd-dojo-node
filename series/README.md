@@ -109,3 +109,29 @@
 - Exploring strategies for designing flexible and maintainable software architectures.
 
 Throughout the series, participants will gain practical experience in applying fundamental principles of software design to a real-world project. They'll also have opportunities to collaborate, share insights, and learn from each other's experiences, fostering a supportive and inclusive learning environment.
+
+## Requirement evolution to augment each sessions b-plot
+
+Here's a set of evolving requirements for the Basic Inventory Management System that prompt the adaptation of each principle, following the suggested order:
+
+1. **Single Responsibility Principle (SRP)**:
+   - **Initial Requirement**: The system should allow users to add, remove, and list items in the inventory.
+   - **Adaptation Requirement**: The system should now also generate reports on inventory levels and notify users when inventory levels are low.
+
+2. **Open/Closed Principle (OCP)**:
+   - **Initial Requirement**: The system allows users to add, remove, and list items using specific methods in the `InventoryManager` class.
+   - **Adaptation Requirement**: The system should now support adding new types of items, such as electronics or furniture, without modifying existing code in the `InventoryManager` class.
+
+3. **Liskov Substitution Principle (LSP)**:
+   - **Initial Requirement**: The system allows users to add and remove items from the inventory.
+   - **Adaptation Requirement**: The system should now ensure that any derived types of items (e.g., different variants of books or CDs) can be seamlessly substituted for the base type (e.g., `Item`) without affecting the behavior of the system.
+
+4. **Interface Segregation Principle (ISP)**:
+   - **Initial Requirement**: The system provides a single interface (`InventoryRepositoryInterface`) for adding, removing, and listing items in the inventory.
+   - **Adaptation Requirement**: The system should now separate the interfaces for adding, removing, and listing items to ensure that clients only depend on the methods they use, rather than implementing unnecessary methods.
+
+5. **Dependency Inversion Principle (DIP)**:
+   - **Initial Requirement**: The system depends directly on concrete implementations of low-level modules, such as the `InventoryRepository` class.
+   - **Adaptation Requirement**: The system should now introduce abstractions (e.g., interfaces) to decouple high-level modules (e.g., `InventoryManager`) from low-level implementation details, promoting flexibility and maintainability.
+
+These evolving requirements illustrate how each principle can be applied in the context of the Basic Inventory Management System, gradually improving its design and adaptability while adhering to best practices in software engineering.
