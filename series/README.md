@@ -112,26 +112,46 @@ Throughout the series, participants will gain practical experience in applying f
 
 ## Requirement evolution to augment each sessions b-plot
 
-Here's a set of evolving requirements for the Basic Inventory Management System that prompt the adaptation of each principle, following the suggested order:
+Here's the initial business requirements and each adaptation in a set of evolving requirements for the Basic Inventory Management System that prompt the adaptation of each principle:
 
-1. **Single Responsibility Principle (SRP)**:
+### Initial Business Requirements:
+1. **Addition, Removal, and Listing of Items**:
+   - **Description**: The system should allow employees to add new items to the inventory, remove existing items when necessary, and list all items currently available in the inventory.
+   - **User Story**: As a warehouse employee, I want to be able to add new items to our inventory, remove items that are no longer in stock, and quickly view a list of all available items.
+
+### Adaptation for Single Responsibility Principle (SRP):
+2. **Inventory Reporting and Low Inventory Notifications**:
+   - **Description**: The system should provide automated reporting on inventory levels and send notifications to warehouse managers when inventory levels fall below a predefined threshold.
+   - **User Story**: As a warehouse manager, I want to receive regular reports on inventory levels to ensure adequate stock levels are maintained. Additionally, I want to be notified immediately when inventory levels for certain items are critically low so that I can take appropriate action.
    - **Initial Requirement**: The system should allow users to add, remove, and list items in the inventory.
    - **Adaptation Requirement**: The system should now also generate reports on inventory levels and notify users when inventory levels are low.
 
-2. **Open/Closed Principle (OCP)**:
+### Adaptation for Open/Closed Principle (OCP):
+3. **Support for New Item Types**:
+   - **Description**: The system should support the addition of new types of items to the inventory without requiring modifications to existing code. New item types may include electronics, furniture, or perishable goods.
+   - **User Story**: As a product manager, I want to be able to introduce new types of items to our inventory without disrupting existing functionality. This will allow us to expand our product offerings and adapt to changing market demands more effectively.
    - **Initial Requirement**: The system allows users to add, remove, and list items using specific methods in the `InventoryManager` class.
    - **Adaptation Requirement**: The system should now support adding new types of items, such as electronics or furniture, without modifying existing code in the `InventoryManager` class.
 
-3. **Liskov Substitution Principle (LSP)**:
+### Adaptation for Liskov Substitution Principle (LSP):
+4. **Seamless Integration of Variant Items**:
+   - **Description**: The system should ensure that variant types of items, such as different editions of books or variations of electronic devices, can be seamlessly integrated into the inventory without impacting the overall functionality.
+   - **User Story**: As a customer service representative, I want to be confident that I can add new editions of books or different models of electronic devices to our inventory without encountering any compatibility issues. This will ensure a smooth customer experience and prevent disruptions to our operations.
    - **Initial Requirement**: The system allows users to add and remove items from the inventory.
    - **Adaptation Requirement**: The system should now ensure that any derived types of items (e.g., different variants of books or CDs) can be seamlessly substituted for the base type (e.g., `Item`) without affecting the behavior of the system.
 
-4. **Interface Segregation Principle (ISP)**:
+### Adaptation for Interface Segregation Principle (ISP):
+5. **Refined Interfaces for Item Management**:
+   - **Description**: The system should provide separate interfaces for adding, removing, and listing items in the inventory to ensure that clients only depend on the methods they use, promoting better code organization and reducing unnecessary dependencies.
+   - **User Story**: As a software developer, I want to work with interfaces that are focused on specific tasks, such as adding, removing, or listing items, rather than having to implement unnecessary methods. This will make the codebase cleaner, more maintainable, and easier to understand.
    - **Initial Requirement**: The system provides a single interface (`InventoryRepositoryInterface`) for adding, removing, and listing items in the inventory.
    - **Adaptation Requirement**: The system should now separate the interfaces for adding, removing, and listing items to ensure that clients only depend on the methods they use, rather than implementing unnecessary methods.
 
-5. **Dependency Inversion Principle (DIP)**:
+### Adaptation for Dependency Inversion Principle (DIP):
+6. **Abstraction of Low-Level Inventory Operations**:
+   - **Description**: The system should introduce abstractions, such as interfaces, to decouple high-level modules from low-level implementation details related to inventory operations. This will promote flexibility, maintainability, and testability in the codebase.
+   - **User Story**: As a software architect, I want to refactor the inventory management system to use abstractions for interacting with the underlying data storage mechanisms. By doing so, we can ensure that high-level modules are not tightly coupled to specific database implementations, making it easier to switch between different storage solutions in the future.
    - **Initial Requirement**: The system depends directly on concrete implementations of low-level modules, such as the `InventoryRepository` class.
    - **Adaptation Requirement**: The system should now introduce abstractions (e.g., interfaces) to decouple high-level modules (e.g., `InventoryManager`) from low-level implementation details, promoting flexibility and maintainability.
 
-These evolving requirements illustrate how each principle can be applied in the context of the Basic Inventory Management System, gradually improving its design and adaptability while adhering to best practices in software engineering.
+These business requirements and evolving adaptations mimic real-world scenarios commonly encountered in software development projects. They highlight the iterative nature of software design and the importance of adhering to SOLID principles to ensure a robust, maintainable, and scalable system.
